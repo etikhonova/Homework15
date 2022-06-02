@@ -1,17 +1,11 @@
 package AnimalClasses;
 
 public class Animal {
-    private String name;
-    private int age;
-    private int weight;
-    private String color;
+    protected String name;
+    protected int age;
+    protected int weight;
+    protected String color;
 
-    public Animal(String name, int age, int weight, String color) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.color = color;
-    }
 
     public String getName() {
         return name;
@@ -51,11 +45,12 @@ public class Animal {
         System.out.println("Я иду");
     }
     public void Eat () {
-        System.out.println("Я пью");
-    }
-    public void Drink () {
         System.out.println("Я ем");
     }
+    public void Drink () {
+        System.out.println("Я пью");
+    }
+
     public String ageName (int age){
         int lastNumber10 =  (age % 10);
         int LastNumber100 = (age % 100);
@@ -72,7 +67,11 @@ public class Animal {
         System.out.println("Привет! меня зовут " +name+ ", мне "+ age + ageName(age)+ ", я вешу - "+weight+" кг"+", мой цвет - "+color);
     }
 
- //   @Override
+    @Override
+    public String toString() {
+        return "Привет! меня зовут " +name+ ", мне "+ age + ageName(age)+ ", я вешу - "+weight+" кг"+", мой цвет - "+color;
+    }
+    //   @Override
  //   public void toString (){
  //       System.out.println("Привет! меня зовут " +name+ ", мне "+ age +"лет(/год/года), я вешу - "+weight+" кг"+", мой цвет - "+color);
  //   }

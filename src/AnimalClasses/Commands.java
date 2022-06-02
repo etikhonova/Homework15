@@ -1,2 +1,7 @@
-package AnimalClasses;public enum Commands {
+package AnimalClasses;
+
+public enum Commands {
+    ADD,
+    LIST,
+    EXIT
 }
