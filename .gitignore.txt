@@ -3,4 +3,4 @@
 # ignore iml
 *.iml
 # ignore compile result
-out
+out/
