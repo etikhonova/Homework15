@@ -1,13 +1,15 @@
-package AnimalClasses;
+package animal.birds;
 
-public class Duck  extends  Animal implements Flying {
+import animal.Animal;
+
+public class Duck  extends Animal implements IFlying {
 
     public void fly() {
         System.out.println("Я утка и я лечу");
     }
 
     @Override
-    public void Say (){
+    public void say (){
         System.out.println("Кря");
     }
 

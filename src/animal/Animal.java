@@ -1,44 +1,35 @@
-package AnimalClasses;
+package animal;
 
 public class Animal {
     protected String name;
     protected int age;
     protected int weight;
     protected String color;
-
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
-
     public int getWeight() {
         return weight;
     }
-
     public void setWeight(int weight) {
         this.weight = weight;
     }
-
     public String getColor() {
         return color;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
-    public void Say () {
+    public void say () {
         System.out.println("Я говорю");
     }
     public void Go () {
@@ -50,11 +41,10 @@ public class Animal {
     public void Drink () {
         System.out.println("Я пью");
     }
-
     public String ageName (int age){
         int lastNumber10 =  (age % 10);
-        int LastNumber100 = (age % 100);
-        if ( (LastNumber100 >= 11) & (LastNumber100 <= 14 ) ) return " лет";
+        int lastNumber100 = (age % 100);
+        if ( (lastNumber100 >= 11) & (lastNumber100 <= 14 ) ) return " лет";
         else if (lastNumber10 == 0) return " лет";
         else if (lastNumber10 == 1) return " год";
         else if (lastNumber10 == 2) return " года";
@@ -62,17 +52,8 @@ public class Animal {
         else if (lastNumber10 == 4) return " года";
         else return " лет";
     }
-
-    public void Hello () {
-        System.out.println("Привет! меня зовут " +name+ ", мне "+ age + ageName(age)+ ", я вешу - "+weight+" кг"+", мой цвет - "+color);
-    }
-
     @Override
     public String toString() {
         return "Привет! меня зовут " +name+ ", мне "+ age + ageName(age)+ ", я вешу - "+weight+" кг"+", мой цвет - "+color;
     }
-    //   @Override
- //   public void toString (){
- //       System.out.println("Привет! меня зовут " +name+ ", мне "+ age +"лет(/год/года), я вешу - "+weight+" кг"+", мой цвет - "+color);
- //   }
 }
