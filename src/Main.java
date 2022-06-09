@@ -1,9 +1,8 @@
 import animal.*;
-import animal.birds.Duck;
+import data.Commands;
 import animal.pets.Cat;
 import animal.pets.Dog;
-import data.Commands;
-
+import animal.birds.Duck;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -39,8 +38,7 @@ public class Main {
                 System.out.println("Unknown command");
             }
         }
-
-    };
+    }
     public static void createAnimal(Animal newAnimal, Scanner scanner){
         System.out.println("Enter name");
         newAnimal.setName(scanner.next());
@@ -55,19 +53,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String addString = sc.next();
                 try {
-                int newInt = Integer.parseInt(addString.trim());
-                    return newInt;
+                    return Integer.parseInt(addString.trim());
                 }
                 catch (NumberFormatException nfe)
                 {
-                    System.out.println("NumberFormatException: " + nfe.getMessage()+ "Enter again");
+                    System.out.println("NumberFormatException: " + nfe.getMessage()+ " Enter again");
                     addInt();
                 }
         return 1;
     }
     public static Animal addAnimal (){
         Scanner sc = new Scanner(System.in);
-        Animal petabs = new Animal();
         System.out.println("Cat, Dog or Duck?");
         String animalName = sc.next().toLowerCase().trim();
         if (animalName.equals("cat")) {
@@ -88,8 +84,8 @@ public class Main {
         } else {
             System.out.println("Unknown animal");
             addAnimal();
-        };
-        return petabs;
+        }
+        return null;
     }
 
 }
