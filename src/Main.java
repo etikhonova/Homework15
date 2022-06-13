@@ -1,10 +1,12 @@
 import animal.*;
+import data.AnimalType;
 import data.Commands;
 import animal.pets.Cat;
 import animal.pets.Dog;
 import animal.birds.Duck;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -65,23 +67,30 @@ public class Main {
     public static Animal addAnimal (){
         Scanner sc = new Scanner(System.in);
         System.out.println("Cat, Dog or Duck?");
-        String animalName = sc.next().toLowerCase().trim();
-        if (animalName.equals("cat")) {
-            Animal pet = new Cat();
-            createAnimal(pet, sc);
-            pet.say();
-            return pet;
-        } else if (animalName.equals("dog")) {
-            Animal pet = new Dog();
-            createAnimal(pet, sc);
-            pet.say();
-            return pet;
-        } else if (animalName.equals("duck")) {
-            Animal pet = new Duck();
-            createAnimal(pet, sc);
-            pet.say();
-            return pet;
-        } else {
+        String animalName = sc.next().trim().toUpperCase();
+        try {
+            switch (AnimalType.valueOf(animalName)) {
+                case CAT -> {
+                    Animal petCat = new Cat();
+                    createAnimal(petCat, sc);
+                    petCat.say();
+                    return petCat;
+                }
+                case DOG -> {
+                    Animal petDog = new Dog();
+                    createAnimal(petDog, sc);
+                    petDog.say();
+                    return petDog;
+                }
+                case DUCK -> {
+                    Animal petDuck = new Duck();
+                    createAnimal(petDuck, sc);
+                    petDuck.say();
+                    return petDuck;
+                }
+            }
+        }
+        catch (IllegalArgumentException e) {
             System.out.println("Unknown animal");
             addAnimal();
         }

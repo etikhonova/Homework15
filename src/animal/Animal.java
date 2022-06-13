@@ -59,7 +59,7 @@ public abstract class Animal {
         else if (lastNumber10 == 4) return " года";
         else return " лет";
     }
-    
+
     @Override
     public String toString() {
         return "Привет! меня зовут " +name+ ", мне "+ age + ageName(age)+ ", я вешу - "+weight+" кг"+", мой цвет - "+color;
